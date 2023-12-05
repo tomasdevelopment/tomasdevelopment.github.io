@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OAuth Redirect</title>
+</head>
+<body>
+    <script type="text/javascript">
+        window.onload = function() {
+            // Parse the URL query string
+            var queryParams = new URLSearchParams(window.location.search);
+
+            // Check if the 'code' parameter is present
+            if (queryParams.has('code')) {
+                var authCode = queryParams.get('code');
+                
+                // Now you can use this code to exchange for an access token
+                // This usually involves making a POST request to the Instagram API
+                console.log('Authorization code:', authCode);
+                
+                // You can also redirect the user to another page or show a message
+            } else {
+                // Handle the error or show a message to the user
+                console.log('Authorization code not received.');
+            }
+        };
+    </script>
+</body>
+</html>
